@@ -4,39 +4,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JavaScript - Básico</title>
 </head>
 
 <body>
+
+    <div class="preloader">
+        <img src="img-folder/oval.svg" alt="">
+    </div>
+
+
+
+
     <div id="container">
-        <h1>Javascript - BASICO</h1>
-        <small>Manipulando elementos html</small>
+        <h1>JavaScript - Básico</h1>
+        <small>Manipulando elementos HTML</small>
 
         <p>Função Soma</p>
-        <button onclick="soma()">Somar</button>
-
-        <button onclick="soma2(500,100)">Somar 2</button>
+        <button class="btn-soma" onclick="soma()">Somar</button>
+        <button class="btn-soma" onclick="soma2(5,10)">Somar2</button>
 
         <div id="calculadora">
-            <h5>calculadora - Soma de dois números</h5>
+            <h5>Calculadora- Soma de dois números</h5>
             <form action="" id="form-calc">
                 <div>
-                    <label for="">Numero1</label>
+                    <label for="numero1">Numero1</label>
                     <input type="number" name="numero1" id="numero1">
                 </div>
+
                 <div>
-                    <label for="">Numero2</label>
+                    <label for="numero2">Numero2</label>
                     <input type="number" name="numero2" id="numero2">
                 </div>
+
                 <div id="resultado">
 
                 </div>
 
             </form>
+            <br>
             <button onclick="somaNumeros()">Calcular</button>
         </div>
-    </div>
+
+        <!-- Utliza-se botão ou Checkbox -->
+        <!-- Botões de exibições das tecnologias -->
+        <div id="tecnologias-botoes">
+            <button class="tecnologias-btn" onclick="exibe('html')">HTML</button>
+            <button class="tecnologias-btn" onclick="exibe('css')">CSS</button>
+            <button class="tecnologias-btn" onclick="exibe('js')">JS</button>
+        </div>
+
+        <!-- Utilizando Checkbox - trabalhando com onchange -->
+        <div id="tecnologias-checkbox">
+            <h4>Selecione as tecnologias</h4>
+            <div>
+                <input type="checkbox" name="" id="" onchange="exibe('html')">
+                <label for="">HTML</label>
+            </div>
+            <div>
+                <input type="checkbox" name="" id="" onchange="exibe('css')">
+                <label for="">CSS</label>
+            </div>
+            <div>
+                <input type="checkbox" name="" id="" onchange="exibe('js')">
+                <label for="">JS</label>
+            </div>
+        </div>
+
+        <!-- Tecnologias -->
+        <div id="tecnologias">
+            <div id="html" class="tec-card" hidden>
+                <h3>HTML</h3>
+                <p>Hipertext markup language</p>
+                <p>Linguagem de marcação de hipertext</p>
+                <p>Versão atual: HTML</p>
+                <small>Linguagem utilizada para estruturar o frontend de websites.</small>
+            </div>
+
+            <div id="css" class="tec-card" hidden>
+                <h3>CSS</h3>
+                <p>Cascading style sheet</p>
+                <p>Folha de estilo em cascata</p>
+                <p>Versão atual: CSS3</p>
+                <small>É um mescanismo para adicionar estilo(cores, fontes, espaçamentos e etc.) a um documento
+                    web</small>
+            </div>
+
+            <div id="js" class="tec-card" hidden>
+                <h3>JS</h3>
+                <p>JavaScript</p>
+                <p>JavaScript</p>
+                <p>Versão atual: ECMAScript 2018(ES8)</p>
+                <small>JavaScript permite páginas da Web interativas e, portanto, é uma parte essencial dos aplicativos
+                    da web.</small>
+            </div>
+        </div>
+        <div id="estados-cidades">
+            <div id="estados">
+                <label for="">Estado</label>
+                <select name="estado" id="estado" onchange="exibeCidade()">
+                    <option value="" disabled selected>Selecione um estado</option>
+                    <option value="sp">São Paulo</option>
+                    <option value="rj">Rio de Janeiro</option>
+                    <option value="mg">Minas Gerais</option>
+                </select>
+            </div>
+            <div id="cidades">
+                <label for="">Escolha a cidade</label>
+                <select name="cidade" id="cidade">
+                    <option value="" disabled selected>Aguarde...</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="api-cep">
+            <h3>Consulta CEP - Utilizando API</h3>
+            <form>
+                <div>
+                    <div>
+                        <label for="cep">CEP</label>
+                        <input type="text" name="cep" id="cep">
+                        <input type="button" value="Consultar" onclick="consultaCep()">
+                    </div>
+                </div>
+                <div id="form-grid">
+                    <div>
+                        <label for="logradouro">Logradouro</label>
+                        <input class="form-grid-item" type="text" name="logradouro" id="logradouro">
+                    </div>
+
+                    <div>
+                        <label for="bairro">Bairro: </label>
+                        <input class="form-grid-item" type="text" name="bairro" id="bairro">
+                    </div>
+
+                    <div>
+                        <label for="numero">Numero</label>
+                        <input class="form-grid-item" type="text" name=numero" id="numero">
+                    </div>
+
+                    <div>
+                        <label for="localidade">Localidade: </label>
+                        <input class="form-grid-item" type="text" name="localidade" id="localidade">
+                    </div>
+
+                    <div>
+                        <label for="uf">UF</label>
+                        <input class="form-grid-item" type="text" name="uf" id="uf">
+                    </div>
+
+                    <div>
+                        <label for="complemento">Complemento</label>
+                        <input class="form-grid-item" type="text" name="complemento" id="complemento">
+                    </div>
+                </div>
+                <input class="endereco-btn" type="button" value="cadastrar">
+
+            </form>
+        </div>
+    </div> <!-- div que finaliza o container -->
+    <!--Importação JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script src="js/script.js"></script>
 </body>
